@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+.navbar-logo {
+  width: 32px;
+}
+
+.navbar-brand {
+  font-family: "Architects Daughter", cursive;
+}
+
+.dropdown {
+  .select-btn {
+    width: 5.5rem;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .dropdown-toggle {
+    i {
+      margin-top: 0.25rem;
+    }
+  }
+
+  &.show {
+    .dropdown-toggle {
+      i {
+        transform: rotate(180deg);
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<td class="align-middle">{{user.id}}</td>
+<td class="align-middle"><img [src]="user.avatar" alt="{{user.firstName}} {{user.lastName}}"></td>
+<td class="no-overflow align-middle">
+  <span ngbTooltip="{{ user.firstName }}"> {{user.firstName}} </span>
+</td>
+<td class="no-overflow align-middle">
+  <span ngbTooltip="{{ user.lastName }}"> {{user.lastName}} </span>
+</td>
+<td class="no-overflow align-middle">
+  <span ngbTooltip="{{ user.email }}"> {{user.email}} </span>
+</td>
+<td class="align-middle">
+  <button ngbTooltip="{{ 'USERS.TABLE.ACTIONS.UPDATE' | translate }}" (click)="update.emit()">
+    <i class="fa fa-edit"></i>
+  </button>
+</td>
+<td class="align-middle">
+  <button ngbTooltip="{{ 'USERS.TABLE.ACTIONS.DELETE' | translate }}" (click)="delete.emit()">
+    <i class="fa fa-trash"></i>
+  </button>
+</td>

@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ 'USERS.DELETE_DIALOG.TITLE' | translate }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <i class="fa fa-close"></i>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ 'USERS.DELETE_DIALOG.CONFIRMATION_MESSAGE' | translate }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">{{ 'USERS.DELETE_DIALOG.ACTIONS.CLOSE'
+    | translate }}</button>
+  <button type="button" class="btn btn-danger" (click)="deleteUser()">{{ 'USERS.DELETE_DIALOG.ACTIONS.DELETE' |
+    translate }}</button>
+</div>

@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "ngx-toastr/toastr";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+}
+
+.required {
+  color: #ff0000;
+}
+
+.error-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.close {
+  border: none;
+  background-color: transparent;
+}
+
+.modal-dialog {
+  min-width: 32rem;
+  margin: 3rem auto;
+}

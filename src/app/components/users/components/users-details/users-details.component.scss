@@ -1,0 +1,18 @@
+td {
+  img {
+    max-width: 64px;
+  }
+
+  > button {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.no-overflow {
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

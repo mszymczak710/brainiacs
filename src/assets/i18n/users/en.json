@@ -1,0 +1,70 @@
+{
+  "USERS": {
+    "HEADER": {
+      "TITLE": "List of smart guys",
+      "BUTTON": "Add a brainiac"
+    },
+    "TABLE": {
+      "ID": "ID",
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Last name",
+      "E-MAIL": "E-mail",
+      "ACTIONS": {
+        "UPDATE": "Update the user",
+        "DELETE": "Delete the user"
+      }
+    },
+    "CREATE_DIALOG": {
+      "TITLE": "Add a new brainiac",
+      "FIRST_NAME": "First name",
+      "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
+      "LAST_NAME": "Last name",
+      "LAST_NAME_PLACEHOLDER": "Type in the last name...",
+      "E-MAIL": "E-mail",
+      "E-MAIL_PLACEHOLDER": "Type in the e-mail...",
+      "ACTIONS": {
+        "SAVE": "Save",
+        "CLOSE": "Close"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "User added successfully!"
+      }
+    },
+    "UPDATE_DIALOG": {
+      "TITLE": "Update a brainiac",
+      "FIRST_NAME": "First name",
+      "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
+      "LAST_NAME": "Last name",
+      "LAST_NAME_PLACEHOLDER": "Type in the last name...",
+      "E-MAIL": "E-mail",
+      "E-MAIL_PLACEHOLDER": "Type in the e-mail...",
+      "ACTIONS": {
+        "SAVE": "Save",
+        "CLOSE": "Close"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "User updated successfully!"
+      }
+    },
+    "VALIDATION": {
+      "FIELD_REQUIRED": "Field is required",
+      "FIELD_MAX_LENGTH": "Field contains too many characters",
+      "INVALID": {
+        "FIRST_NAME": "Invalid first name",
+        "LAST_NAME": "Invalid last name",
+        "E-MAIL": "Invalid email address"
+      }
+    },
+    "DELETE_DIALOG": {
+      "TITLE": "Delete a brainiac",
+      "CONFIRMATION_MESSAGE": "Are you sure you want to delete this user?",
+      "ACTIONS": {
+        "DELETE": "Delete",
+        "CLOSE": "Close"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "User deleted successfully!"
+      }
+    }
+  }
+}

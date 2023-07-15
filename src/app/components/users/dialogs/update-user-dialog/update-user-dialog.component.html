@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ 'USERS.UPDATE_DIALOG.TITLE' | translate }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <i class="fa fa-close"></i>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="updateUserForm">
+    <div class="row mb-3">
+      <div class="form-group col-sm-6">
+        <label for="firstName">{{ 'USERS.UPDATE_DIALOG.FIRST_NAME' | translate }} <span
+            class="required">*</span></label>
+        <input type="search" class="form-control mt-1" id="firstName"
+          placeholder="{{ 'USERS.UPDATE_DIALOG.FIRST_NAME_PLACEHOLDER' | translate }}" formControlName="firstName"
+          [ngClass]="{ 'is-invalid': f['firstName'].touched && f['firstName'].errors, 'is-valid': f['firstName'].valid }">
+        <div *ngIf="f['firstName'].touched && f['firstName'].errors" class="text-danger mt-1 error-text">
+          <span *ngIf="f['firstName'].errors?.['required']">{{ 'USERS.VALIDATION.FIELD_REQUIRED' | translate }}</span>
+          <span *ngIf="f['firstName'].errors?.['maxlength']">{{ 'USERS.VALIDATION.FIELD_MAX_LENGTH' | translate
+            }}</span>
+          <span *ngIf="f['firstName'].errors?.['pattern']">{{ 'USERS.VALIDATION.INVALID.FIRST_NAME' | translate
+            }}</span>
+        </div>
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="lastName">{{ 'USERS.UPDATE_DIALOG.LAST_NAME' | translate }} <span class="required">*</span></label>
+        <input type="search" class="form-control mt-1" id="lastName"
+          placeholder="{{ 'USERS.UPDATE_DIALOG.LAST_NAME_PLACEHOLDER' | translate }}" formControlName="lastName"
+          [ngClass]="{ 'is-invalid': f['lastName'].touched && f['lastName'].errors, 'is-valid': f['lastName'].valid }">
+        <div *ngIf="f['lastName'].touched && f['lastName'].errors" class="text-danger mt-1 error-text">
+          <span *ngIf="f['lastName'].errors?.['required']">{{ 'USERS.VALIDATION.FIELD_REQUIRED' | translate }}</span>
+          <span *ngIf="f['lastName'].errors?.['maxlength']">{{ 'USERS.VALIDATION.FIELD_MAX_LENGTH' | translate }}</span>
+          <span *ngIf="f['lastName'].errors?.['pattern']">{{ 'USERS.VALIDATION.INVALID.LAST_NAME' | translate }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">{{ 'USERS.UPDATE_DIALOG.E-MAIL' | translate }} <span class="required">*</span></label>
+      <input type="search" class="form-control mt-1" id="email"
+        placeholder="{{ 'USERS.UPDATE_DIALOG.E-MAIL_PLACEHOLDER' | translate }}" formControlName="email"
+        [ngClass]="{ 'is-invalid': f['email'].touched && f['email'].errors, 'is-valid': f['email'].valid }">
+      <div *ngIf="f['email'].touched && f['email'].errors" class="text-danger mt-1 error-text">
+        <span *ngIf="f['email'].errors?.['required']">{{ 'USERS.VALIDATION.FIELD_REQUIRED' | translate }}</span>
+        <span *ngIf="f['email'].errors?.['maxlength']">{{ 'USERS.VALIDATION.FIELD_MAX_LENGTH' | translate }}</span>
+        <span *ngIf="f['email'].errors?.['email']">{{ 'USERS.VALIDATION.INVALID.E-MAIL' | translate }}</span>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">{{ 'USERS.UPDATE_DIALOG.ACTIONS.CLOSE'
+    | translate }}</button>
+  <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="updateUserForm.invalid">{{
+    'USERS.UPDATE_DIALOG.ACTIONS.SAVE' | translate }}</button>
+</div>
