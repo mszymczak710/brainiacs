@@ -19,24 +19,54 @@ const DELETE_USER_FAIL = '[Users API] Delete User Failure';
 
 export const loadUsersPage = createAction(LOAD_USERS);
 
-export const loadUsersPageSuccess = createAction(LOAD_USERS_SUCCESS, props<{ page: UsersPage }>());
+export const loadUsersPageSuccess = createAction(
+	LOAD_USERS_SUCCESS,
+	props<{ page: UsersPage }>()
+);
 
-export const loadUsersPageFailure = createAction(LOAD_USERS_FAIL, props<{ error: string }>());
+export const loadUsersPageFailure = createAction(
+	LOAD_USERS_FAIL,
+	props<{ error: string }>()
+);
 
 export const addUser = createAction(ADD_USER, props<{ user: User }>());
 
-export const addUserSuccess = createAction(ADD_USER_SUCCESS, props<{ user: User }>());
+export const addUserSuccess = createAction(
+	ADD_USER_SUCCESS,
+	props<{ user: User }>()
+);
 
-export const addUserFailure = createAction(ADD_USER_FAIL, props<{ error: string }>());
+export const addUserFailure = createAction(
+	ADD_USER_FAIL,
+	props<{ error: string }>()
+);
 
-export const updateUser = createAction(UPDATE_USER, props<{ userId: number; user: User }>());
+export const updateUser = createAction(
+	UPDATE_USER,
+	props<{ userId: number; user: User }>()
+);
 
-export const updateUserSuccess = createAction(UPDATE_USER_SUCCESS, props<{ userId: number; user: User }>());
+export const updateUserSuccess = createAction(
+	UPDATE_USER_SUCCESS,
+	props<{ userId: number; user: User }>()
+);
 
-export const updateUserFailure = createAction(UPDATE_USER_FAIL, props<{ error: string }>());
+export const updateUserFailure = createAction(
+	UPDATE_USER_FAIL,
+	props<{ error: string }>()
+);
 
-export const deleteUser = createAction(DELETE_USER, props<{ userId: number }>());
+export const deleteUser = createAction(
+	DELETE_USER,
+	props<{ userId: number }>()
+);
 
-export const deleteUserSuccess = createAction(DELETE_USER_SUCCESS, props<{ userId: number }>());
+export const deleteUserSuccess = createAction(
+	DELETE_USER_SUCCESS,
+	props<{ userId: number }>()
+);
 
-export const deleteUserFailure = createAction(DELETE_USER_FAIL, props<{ error: string }>());
+export const deleteUserFailure = createAction(
+	DELETE_USER_FAIL,
+	props<{ error: string }>()
+);

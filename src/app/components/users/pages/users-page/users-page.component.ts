@@ -18,7 +18,9 @@ import { I18nService } from '@services';
 })
 export class UsersPageComponent implements OnInit {
 	usersPage$: Observable<UsersPage> = this.usersFacade.all$;
-	users$: Observable<User[]> = this.usersPage$.pipe(map((usersPage) => usersPage?.result));
+	users$: Observable<User[]> = this.usersPage$.pipe(
+		map((usersPage) => usersPage?.result)
+	);
 
 	user: User;
 
@@ -30,7 +32,9 @@ export class UsersPageComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.i18nService.localeEvent.subscribe((locale) => this.translate.use(locale));
+		this.i18nService.localeEvent.subscribe((locale) =>
+			this.translate.use(locale)
+		);
 		this.loadUsersPage();
 	}
 
@@ -39,18 +43,27 @@ export class UsersPageComponent implements OnInit {
 	}
 
 	addUser(): void {
-		const modalRef = this.modalService.open(AddNewUserDialogComponent);
+		const modalRef = this.modalService.open(AddNewUserDialogComponent, {
+			size: 'md',
+			backdrop: 'static',
+		});
 	}
 
 	updateUser(user: User): void {
 		this.user = user;
-		const modalRef = this.modalService.open(UpdateUserDialogComponent);
+		const modalRef = this.modalService.open(UpdateUserDialogComponent, {
+			size: 'md',
+			backdrop: 'static',
+		});
 		modalRef.componentInstance.userId = this.user.id;
 	}
 
 	deleteUser(user: User): void {
 		this.user = user;
-		const modalRef = this.modalService.open(DeleteConfirmationDialogComponent);
+		const modalRef = this.modalService.open(DeleteConfirmationDialogComponent, {
+			size: 'md',
+			backdrop: 'static',
+		});
 		modalRef.componentInstance.userId = this.user.id;
 	}
 }

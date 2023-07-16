@@ -10,7 +10,7 @@
       "LAST_NAME": "Last name",
       "E-MAIL": "E-mail",
       "ACTIONS": {
-        "UPDATE": "Update the user",
+        "UPDATE": "Edit the user",
         "DELETE": "Delete the user"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     "UPDATE_DIALOG": {
-      "TITLE": "Update a brainiac",
+      "TITLE": "Edit a brainiac",
       "FIRST_NAME": "First name",
       "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
       "LAST_NAME": "Last name",

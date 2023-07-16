@@ -20,7 +20,8 @@ export interface State {
 	users: UsersState;
 }
 
-export const getUsersFeatureState = createFeatureSelector<UsersState>(STATE_KEY);
+export const getUsersFeatureState =
+	createFeatureSelector<UsersState>(STATE_KEY);
 
 export const reducers = createReducer(
 	initialState,
@@ -62,7 +63,9 @@ export const reducers = createReducer(
 		};
 	}),
 	on(UsersActions.deleteUserSuccess, (state, { userId }): UsersState => {
-		const filteredResult = state.page.result.filter((user) => user.id !== userId);
+		const filteredResult = state.page.result.filter(
+			(user) => user.id !== userId
+		);
 		const totalPages = Math.ceil(filteredResult.length / state.page.pageSize); // Oblicz nową wartość totalPages
 
 		return {

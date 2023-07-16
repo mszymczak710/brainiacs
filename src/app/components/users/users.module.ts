@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
-import { AddNewUserDialogComponent, UpdateUserDialogComponent, DeleteConfirmationDialogComponent } from './dialogs/';
+import {
+	AddNewUserDialogComponent,
+	UpdateUserDialogComponent,
+	DeleteConfirmationDialogComponent,
+} from './dialogs/';
 import { UsersApiService } from './services';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';

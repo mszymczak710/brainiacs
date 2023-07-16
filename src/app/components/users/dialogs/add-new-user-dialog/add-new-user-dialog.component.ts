@@ -42,20 +42,40 @@ export class AddNewUserDialogComponent {
 			firstName: this.f['firstName'].value,
 			lastName: this.f['lastName'].value,
 			email: this.f['email'].value,
-			avatar: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png',
+			avatar:
+				'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png',
 		};
 		this.usersFacade.addUser(user);
-		this.translate.get('USERS.CREATE_DIALOG.TOAST_MESSAGE.SUCCESS').subscribe((message: string) => {
-			this.toastr.success(message);
-		});
+		this.translate
+			.get('USERS.CREATE_DIALOG.TOAST_MESSAGE.SUCCESS')
+			.subscribe((message: string) => {
+				this.toastr.success(message);
+			});
 		this.activeModal.close();
 	}
 
 	createForm(): FormGroup {
 		return this.formBuilder.group({
-			firstName: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*'), Validators.maxLength(255)]],
-			lastName: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*'), Validators.maxLength(255)]],
-			email: ['', [Validators.email, Validators.required, Validators.maxLength(255)]],
+			firstName: [
+				'',
+				[
+					Validators.required,
+					Validators.pattern('[A-Z][a-z]*'),
+					Validators.maxLength(255),
+				],
+			],
+			lastName: [
+				'',
+				[
+					Validators.required,
+					Validators.pattern('[A-Z][a-z]*'),
+					Validators.maxLength(255),
+				],
+			],
+			email: [
+				'',
+				[Validators.email, Validators.required, Validators.maxLength(255)],
+			],
 		});
 	}
 }

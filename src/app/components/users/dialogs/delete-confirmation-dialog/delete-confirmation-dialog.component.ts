@@ -21,9 +21,11 @@ export class DeleteConfirmationDialogComponent {
 
 	deleteUser() {
 		this.usersFacade.deleteUser(this.userId);
-		this.translate.get('USERS.DELETE_DIALOG.TOAST_MESSAGE.SUCCESS').subscribe((message: string) => {
-			this.toastr.error(message);
-		});
+		this.translate
+			.get('USERS.DELETE_DIALOG.TOAST_MESSAGE.SUCCESS')
+			.subscribe((message: string) => {
+				this.toastr.error(message);
+			});
 
 		this.activeModal.close();
 	}

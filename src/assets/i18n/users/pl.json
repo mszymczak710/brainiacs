@@ -10,7 +10,7 @@
       "LAST_NAME": "Nazwisko",
       "E-MAIL": "E-mail",
       "ACTIONS": {
-        "UPDATE": "Aktualizuj użytkownika",
+        "UPDATE": "Edytuj użytkownika",
         "DELETE": "Usuń użytkownika"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     "UPDATE_DIALOG": {
-      "TITLE": "Aktualizacja mózgowca",
+      "TITLE": "Edycja mózgowca",
       "FIRST_NAME": "Imię",
       "FIRST_NAME_PLACEHOLDER": "Wpisz imię...",
       "LAST_NAME": "Nazwisko",

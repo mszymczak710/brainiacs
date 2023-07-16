@@ -55,17 +55,36 @@ export class UpdateUserDialogComponent implements OnInit {
 		};
 
 		this.usersFacade.updateUser(this.userId, user);
-		this.translate.get('USERS.UPDATE_DIALOG.TOAST_MESSAGE.SUCCESS').subscribe((message: string) => {
-			this.toastr.info(message);
-		});
+		this.translate
+			.get('USERS.UPDATE_DIALOG.TOAST_MESSAGE.SUCCESS')
+			.subscribe((message: string) => {
+				this.toastr.info(message);
+			});
 		this.activeModal.close();
 	}
 
 	createForm(): FormGroup {
 		return this.formBuilder.group({
-			firstName: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*'), Validators.maxLength(255)]],
-			lastName: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*'), Validators.maxLength(255)]],
-			email: ['', [Validators.email, Validators.required, Validators.maxLength(255)]],
+			firstName: [
+				'',
+				[
+					Validators.required,
+					Validators.pattern('[A-Z][a-z]*'),
+					Validators.maxLength(255),
+				],
+			],
+			lastName: [
+				'',
+				[
+					Validators.required,
+					Validators.pattern('[A-Z][a-z]*'),
+					Validators.maxLength(255),
+				],
+			],
+			email: [
+				'',
+				[Validators.email, Validators.required, Validators.maxLength(255)],
+			],
 		});
 	}
 }

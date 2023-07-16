@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 import { UsersPage } from '@users/models';
 import { UsersActions } from '@users/state';
 import { UsersState } from '@users/state/reducers/users.reducer';
-import { getLoadingState, getUsersPage } from '@users/state/selectors/users.selector';
+import {
+	getLoadingState,
+	getUsersPage,
+} from '@users/state/selectors/users.selector';
 import { User } from '@users/models/users.model';
 
 @Injectable({

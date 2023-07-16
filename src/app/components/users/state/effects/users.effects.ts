@@ -12,7 +12,9 @@ export class UsersEffects {
 			switchMap(() =>
 				this.api.getUsersPage().pipe(
 					map((page) => UsersActions.loadUsersPageSuccess({ page })),
-					catchError((error) => of(UsersActions.loadUsersPageFailure({ error })))
+					catchError((error) =>
+						of(UsersActions.loadUsersPageFailure({ error }))
+					)
 				)
 			),
 			debounceTime(200)

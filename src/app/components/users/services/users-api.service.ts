@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+	HttpClient,
+	HttpErrorResponse,
+	HttpHeaders,
+} from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { User, UsersPage, ApiResponse, UserData } from '@users/models';
@@ -49,13 +53,15 @@ export class UsersApiService {
 				const nextPageUrl = `${this.apiUrl}/users?page=${nextPage}`;
 				return this.http.get<ApiResponse>(nextPageUrl, this.httpOptions).pipe(
 					map((nextPageResponse: ApiResponse) => {
-						const nextPageUsers: User[] = nextPageResponse.data.map((nextPageUserData: UserData) => ({
-							id: nextPageUserData.id,
-							firstName: nextPageUserData.first_name,
-							lastName: nextPageUserData.last_name,
-							email: nextPageUserData.email,
-							avatar: nextPageUserData.avatar,
-						}));
+						const nextPageUsers: User[] = nextPageResponse.data.map(
+							(nextPageUserData: UserData) => ({
+								id: nextPageUserData.id,
+								firstName: nextPageUserData.first_name,
+								lastName: nextPageUserData.last_name,
+								email: nextPageUserData.email,
+								avatar: nextPageUserData.avatar,
+							})
+						);
 
 						usersPage.result.push(...nextPageUsers);
 						return usersPage;
@@ -64,7 +70,9 @@ export class UsersApiService {
 			}),
 			catchError((error: HttpErrorResponse) => {
 				console.error('An error occurred:', error);
-				return throwError(() => 'Something went wrong. Please try again later.');
+				return throwError(
+					() => 'Something went wrong. Please try again later.'
+				);
 			})
 		);
 	}
@@ -119,7 +127,9 @@ export class UsersApiService {
 		return this.http.put<User>(url, userUpdated, this.httpOptions).pipe(
 			catchError((error: HttpErrorResponse) => {
 				console.error('An error occurred while updating user:', error);
-				return throwError(() => 'Failed to update user. Please try again later.');
+				return throwError(
+					() => 'Failed to update user. Please try again later.'
+				);
 			})
 		);
 	}

@@ -11,6 +11,7 @@
       "files": "*.ts",
       "options": {
         "semi": true,
+        "printWidth": 80,
         "useTabs": true
       }
     },
