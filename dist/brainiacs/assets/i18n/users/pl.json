@@ -1,0 +1,70 @@
+{
+  "USERS": {
+    "HEADER": {
+      "TITLE": "Lista mądrych ludzi",
+      "BUTTON": "Dodaj mózgowca"
+    },
+    "TABLE": {
+      "ID": "ID",
+      "FIRST_NAME": "Imię",
+      "LAST_NAME": "Nazwisko",
+      "E-MAIL": "E-mail",
+      "ACTIONS": {
+        "UPDATE": "Edytuj użytkownika",
+        "DELETE": "Usuń użytkownika"
+      }
+    },
+    "CREATE_DIALOG": {
+      "TITLE": "Dodawanie nowego mózgowca",
+      "FIRST_NAME": "Imię",
+      "FIRST_NAME_PLACEHOLDER": "Wpisz imię...",
+      "LAST_NAME": "Nazwisko",
+      "LAST_NAME_PLACEHOLDER": "Wpisz nazwisko...",
+      "E-MAIL": "E-mail",
+      "E-MAIL_PLACEHOLDER": "Wpisz adres e-mail...",
+      "ACTIONS": {
+        "SAVE": "Zapisz",
+        "CLOSE": "Zamknij"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "Użytkownik dodany pomyślnie!"
+      }
+    },
+    "UPDATE_DIALOG": {
+      "TITLE": "Edycja mózgowca",
+      "FIRST_NAME": "Imię",
+      "FIRST_NAME_PLACEHOLDER": "Wpisz imię...",
+      "LAST_NAME": "Nazwisko",
+      "LAST_NAME_PLACEHOLDER": "Wpisz nazwisko...",
+      "E-MAIL": "E-mail",
+      "E-MAIL_PLACEHOLDER": "Wpisz adres e-mail...",
+      "ACTIONS": {
+        "SAVE": "Zapisz",
+        "CLOSE": "Zamknij"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "Użytkownik został zaktualizowany pomyślnie!"
+      }
+    },
+    "VALIDATION": {
+      "FIELD_REQUIRED": "Pole jest wymagane",
+      "FIELD_MAX_LENGTH": "Pole zawiera za dużo znaków",
+      "INVALID": {
+        "FIRST_NAME": "Niepoprawne imię",
+        "LAST_NAME": "Niepoprawne nazwisko",
+        "E-MAIL": "Niepoprawny adres e-mail"
+      }
+    },
+    "DELETE_DIALOG": {
+      "TITLE": "Usuwanie mózgowca",
+      "CONFIRMATION_MESSAGE": "Czy na pewno chcesz usunąć tego użytkownika?",
+      "ACTIONS": {
+        "DELETE": "Usuń",
+        "CLOSE": "Zamknij"
+      },
+      "TOAST_MESSAGE": {
+        "SUCCESS": "Użytkownik został usunięty pomyślnie!"
+      }
+    }
+  }
+}
