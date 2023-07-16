@@ -1,78 +1,42 @@
 import { createAction, props } from '@ngrx/store';
 import { User, UsersPage } from '@users/models';
 
-const SEARCH = '[Users API] Load Users...';
-const SEARCH_SUCCESS = '[Users API] Load Users Success';
-const SEARCH_FAIL = '[Users API] Load Users Fail';
+const LOAD_USERS = '[Users API] Load Users...';
+const LOAD_USERS_SUCCESS = '[Users API] Load Users Successfully';
+const LOAD_USERS_FAIL = '[Users API] Load Users Failure';
 
-export const loadUsersPage = createAction(SEARCH);
+const ADD_USER = '[Users API] Add User...';
+const ADD_USER_SUCCESS = '[Users API] Add User Successfully';
+const ADD_USER_FAIL = '[Users API] Add User Failure';
 
-export const loadUsersPageSuccess = createAction(
-  SEARCH_SUCCESS,
-  props<{ page: UsersPage }>()
-);
+const UPDATE_USER = '[Users API] Update User...';
+const UPDATE_USER_SUCCESS = '[Users API] Update User Successfully';
+const UPDATE_USER_FAIL = '[Users API] Update User Failure';
 
-export const loadUsersPageFailure = createAction(
-  SEARCH_FAIL,
-  props<{ error: string }>()
-);
+const DELETE_USER = '[Users API] Delete User...';
+const DELETE_USER_SUCCESS = '[Users API] Delete User Successfully';
+const DELETE_USER_FAIL = '[Users API] Delete User Failure';
 
-export const addUser = createAction(
-  '[Users API] Add User...',
-  props<{ user: User }>()
-);
+export const loadUsersPage = createAction(LOAD_USERS);
 
-export const addUserSuccess = createAction(
-  '[Users API] Add User Success',
-  props<{ user: User }>()
-);
+export const loadUsersPageSuccess = createAction(LOAD_USERS_SUCCESS, props<{ page: UsersPage }>());
 
-export const addUserFailure = createAction(
-  '[Users API] Add User Failure',
-  props<{ error: string }>()
-);
+export const loadUsersPageFailure = createAction(LOAD_USERS_FAIL, props<{ error: string }>());
 
-export const deleteUser = createAction(
-  '[Users API] Delete User...',
-  props<{ userId: number }>()
-);
+export const addUser = createAction(ADD_USER, props<{ user: User }>());
 
-export const deleteUserSuccess = createAction(
-  '[Users API] Delete User Success',
-  props<{ userId: number }>()
-);
+export const addUserSuccess = createAction(ADD_USER_SUCCESS, props<{ user: User }>());
 
-export const deleteUserFailure = createAction(
-  '[Users API] Delete User Failure',
-  props<{ error: string }>()
-);
+export const addUserFailure = createAction(ADD_USER_FAIL, props<{ error: string }>());
 
-export const loadUser = createAction(
-  '[Users API] Load User...',
-  props<{ userId: number }>()
-);
+export const updateUser = createAction(UPDATE_USER, props<{ userId: number; user: User }>());
 
-export const loadUserSuccess = createAction(
-  '[Users API] Load User Success',
-  props<{ user: User }>()
-);
+export const updateUserSuccess = createAction(UPDATE_USER_SUCCESS, props<{ userId: number; user: User }>());
 
-export const loadUserFailure = createAction(
-  '[Users API] Load User Failure',
-  props<{ error: string }>()
-);
+export const updateUserFailure = createAction(UPDATE_USER_FAIL, props<{ error: string }>());
 
-export const updateUser = createAction(
-  '[Users API] Update User...',
-  props<{ userId: number; user: User }>()
-);
+export const deleteUser = createAction(DELETE_USER, props<{ userId: number }>());
 
-export const updateUserSuccess = createAction(
-  '[Users API] Update User Success',
-  props<{ userId: number; user: User }>()
-);
+export const deleteUserSuccess = createAction(DELETE_USER_SUCCESS, props<{ userId: number }>());
 
-export const updateUserFailure = createAction(
-  '[Users API] Update User Failure',
-  props<{ error: string }>()
-);
+export const deleteUserFailure = createAction(DELETE_USER_FAIL, props<{ error: string }>());

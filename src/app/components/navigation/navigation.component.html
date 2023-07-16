@@ -1,22 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <div class="d-flex align-items-center gap-3">
-      <a class="navbar-brand" routerLink="/home"><img class="navbar-logo" src="../assets/images/logo.png" alt="">
+      <a class="navbar-brand" routerLink="/home"><img class="navbar-logo" src="../assets/images/logo.png" alt="" />
         Brainiacs </a>
       <div ngbDropdown>
-        <button type="button" class="btn btn-light d-flex justify-content-between align-items-center select-btn btn-sm"
-          ngbDropdownToggle> {{ 'NAVIGATION.CHOOSE_LANGUAGE.' + translate.currentLang.toUpperCase() | translate }} <i
-            class="fa fa-angle-down"></i></button>
+        <button class="btn btn-light d-flex justify-content-between align-items-center select-btn btn-sm"
+          ngbDropdownToggle> {{ "NAVIGATION.CHOOSE_LANGUAGE." + translate.currentLang.toUpperCase() | translate }} <i
+            class="fa fa-angle-down"></i>
+        </button>
         <div ngbDropdownMenu>
-          <button ngbDropdownItem *ngIf="translate.currentLang === 'en'" [value]="'pl'" (click)="changeLocale('pl')"> {{
-            'NAVIGATION.CHOOSE_LANGUAGE.PL' | translate }} </button>
-          <button ngbDropdownItem *ngIf="translate.currentLang === 'pl'" [value]="'en'" (click)="changeLocale('en')"> {{
-            'NAVIGATION.CHOOSE_LANGUAGE.EN' | translate }} </button>
+          <button ngbDropdownItem [value]="translate.currentLang === 'en' ? 'pl' : 'en'" (click)="
+              changeLocale(translate.currentLang === 'en' ? 'pl' : 'en')
+            "> {{ "NAVIGATION.CHOOSE_LANGUAGE." + (translate.currentLang === "en" ? "PL" : "EN") | translate }}
+          </button>
         </div>
       </div>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">

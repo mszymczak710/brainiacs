@@ -16,35 +16,35 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/shared/', '.json');
+	return new TranslateHttpLoader(http, './assets/i18n/shared/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, HomeComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    StoreModule.forRoot({ users: reducers }),
-    EffectsModule.forRoot([]),
-    NgbDropdownModule,
-    StoreDevtoolsModule.instrument({}),
-    ToastrModule.forRoot({
-      timeOut: 1500,
-      preventDuplicates: true,
-    }),
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-      isolate: true,
-    }),
-  ],
-  providers: [NgbActiveModal],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent, NavigationComponent, HomeComponent],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		StoreModule.forRoot({ users: reducers }),
+		EffectsModule.forRoot([]),
+		NgbDropdownModule,
+		StoreDevtoolsModule.instrument({}),
+		ToastrModule.forRoot({
+			timeOut: 1500,
+			preventDuplicates: true,
+		}),
+		TranslateModule.forRoot({
+			defaultLanguage: 'en',
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient],
+			},
+			isolate: true,
+		}),
+	],
+	providers: [NgbActiveModal],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

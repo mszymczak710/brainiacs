@@ -1,0 +1,41 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "endOfLine": "crlf",
+  "bracketSameLine": true,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "semi": true,
+        "useTabs": true
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "useTabs": false,
+        "semi": false,
+        "singleQuote": false,
+        "printWidth": 80,
+        "parser": "angular"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "useTabs": false,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "useTabs": false
+      }
+    }
+  ]
+}
