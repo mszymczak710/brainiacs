@@ -49,7 +49,7 @@ export class UpdateUserDialogComponent implements OnInit {
 		return this.updateUserForm.controls;
 	}
 
-	onSubmit() {
+	onSubmit(): void {
 		if (this.updateUserForm.invalid) {
 			return;
 		}

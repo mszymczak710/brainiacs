@@ -22,7 +22,7 @@ export class UsersPageComponent implements OnInit {
 		map((usersPage) => usersPage?.result)
 	);
 
-	user: User;
+	private user: User;
 
 	constructor(
 		private usersFacade: UsersFacade,

@@ -19,7 +19,7 @@ export class DeleteConfirmationDialogComponent {
 		private translate: TranslateService
 	) {}
 
-	deleteUser() {
+	deleteUser(): void {
 		this.usersFacade.deleteUser(this.userId);
 		this.translate
 			.get('USERS.DELETE_DIALOG.TOAST_MESSAGE.SUCCESS')

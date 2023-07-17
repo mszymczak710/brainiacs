@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 	templateUrl: './add-new-user-dialog.component.html',
 	styleUrls: ['./add-new-user-dialog.component.scss'],
 })
-export class AddNewUserDialogComponent {
+export class AddNewUserDialogComponent implements OnInit {
 	public createUserForm: FormGroup;
 	private existingEmails: string[] = [];
 	private currentCount: number;
@@ -22,7 +22,9 @@ export class AddNewUserDialogComponent {
 		private translate: TranslateService,
 		private usersFacade: UsersFacade,
 		private toastr: ToastrService
-	) {
+	) {}
+
+	ngOnInit(): void {
 		this.createUserForm = this.createForm();
 		this.usersFacade.all$.subscribe((usersPage) => {
 			this.currentCount = usersPage.count;
@@ -34,7 +36,7 @@ export class AddNewUserDialogComponent {
 		return this.createUserForm.controls;
 	}
 
-	onSubmit() {
+	onSubmit(): void {
 		if (this.createUserForm.invalid) {
 			return;
 		}
