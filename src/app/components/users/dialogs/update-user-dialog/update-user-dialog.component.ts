@@ -14,7 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UpdateUserDialogComponent implements OnInit {
 	@Input() userId: number;
-	updateUserForm: FormGroup;
+	public updateUserForm: FormGroup;
+	private existingEmails: string[] = [];
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -27,6 +28,10 @@ export class UpdateUserDialogComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.updateUserForm = this.createForm();
+
+		this.usersFacade.all$.subscribe((usersPage) => {
+			this.existingEmails = usersPage.result.map((user) => user.email);
+		});
 
 		this.usersApiService.getUser(this.userId).subscribe((user: User) => {
 			this.updateUserForm.patchValue({
@@ -43,6 +48,18 @@ export class UpdateUserDialogComponent implements OnInit {
 
 	onSubmit() {
 		if (this.updateUserForm.invalid) {
+			return;
+		}
+
+		const email = this.f['email'].value;
+
+		if (this.existingEmails.includes(email)) {
+			this.translate
+				.get('USERS.UPDATE_DIALOG.TOAST_MESSAGE.ERROR')
+				.subscribe((message: string) => {
+					this.toastr.error(message);
+				});
+
 			return;
 		}
 

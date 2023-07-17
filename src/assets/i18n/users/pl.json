@@ -27,7 +27,8 @@
         "CLOSE": "Zamknij"
       },
       "TOAST_MESSAGE": {
-        "SUCCESS": "Użytkownik dodany pomyślnie!"
+        "SUCCESS": "Użytkownik dodany pomyślnie!",
+        "ERROR": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!"
       }
     },
     "UPDATE_DIALOG": {
@@ -43,7 +44,8 @@
         "CLOSE": "Zamknij"
       },
       "TOAST_MESSAGE": {
-        "SUCCESS": "Użytkownik został zaktualizowany pomyślnie!"
+        "SUCCESS": "Użytkownik został zaktualizowany pomyślnie!",
+        "ERROR": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!"
       }
     },
     "VALIDATION": {

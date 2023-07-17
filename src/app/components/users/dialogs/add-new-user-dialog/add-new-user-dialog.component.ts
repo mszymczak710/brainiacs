@@ -13,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddNewUserDialogComponent {
 	public createUserForm: FormGroup;
+	private existingEmails: string[] = [];
 	private currentCount: number;
 
 	constructor(
@@ -25,6 +26,7 @@ export class AddNewUserDialogComponent {
 		this.createUserForm = this.createForm();
 		this.usersFacade.all$.subscribe((usersPage) => {
 			this.currentCount = usersPage.count;
+			this.existingEmails = usersPage.result.map((user) => user.email);
 		});
 	}
 
@@ -37,11 +39,23 @@ export class AddNewUserDialogComponent {
 			return;
 		}
 
+		const email = this.f['email'].value;
+
+		if (this.existingEmails.includes(email)) {
+			this.translate
+				.get('USERS.CREATE_DIALOG.TOAST_MESSAGE.ERROR')
+				.subscribe((message: string) => {
+					this.toastr.error(message);
+				});
+
+			return;
+		}
+
 		const user: User = {
 			id: this.currentCount + 1,
 			firstName: this.f['firstName'].value,
 			lastName: this.f['lastName'].value,
-			email: this.f['email'].value,
+			email: email,
 			avatar:
 				'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png',
 		};

@@ -20,7 +20,7 @@
           formControlName="firstName"
           [ngClass]="{
             'is-invalid': f['firstName'].touched && f['firstName'].errors,
-            'is-valid': f['firstName'].valid
+            'is-valid': f['firstName'].touched && f['firstName'].valid
           }" />
         <div
           *ngIf="f['firstName'].touched && f['firstName'].errors"
@@ -51,7 +51,7 @@
           formControlName="lastName"
           [ngClass]="{
             'is-invalid': f['lastName'].touched && f['lastName'].errors,
-            'is-valid': f['lastName'].valid
+            'is-valid': f['lastName'].touched && f['lastName'].valid
           }" />
         <div
           *ngIf="f['lastName'].touched && f['lastName'].errors"
@@ -81,7 +81,7 @@
         formControlName="email"
         [ngClass]="{
           'is-invalid': f['email'].touched && f['email'].errors,
-          'is-valid': f['email'].valid
+          'is-valid': f['email'].touched && f['email'].valid
         }" />
       <div *ngIf="f['email'].touched && f['email'].errors" class="text-danger">
         <small *ngIf="f['email'].errors?.['required']">{{
@@ -105,7 +105,7 @@
     class="btn btn-primary"
     ngbAutofocus
     (click)="onSubmit()"
-    [disabled]="updateUserForm.invalid">
+    [disabled]="!updateUserForm.dirty || updateUserForm.invalid">
     {{ "USERS.UPDATE_DIALOG.ACTIONS.SAVE" | translate }}
   </button>
 </div>

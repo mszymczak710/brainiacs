@@ -10,14 +10,12 @@
 
 .dropdown {
   .select-btn {
-    width: 5.5rem;
+    min-width: 6rem;
 
     &::after {
       display: none;
     }
-  }
 
-  .dropdown-toggle {
     i {
       margin-top: 0.25rem;
     }
