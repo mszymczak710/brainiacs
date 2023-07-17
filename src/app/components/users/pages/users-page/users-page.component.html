@@ -25,7 +25,8 @@
           *ngFor="let user of users"
           [user]="user"
           (update)="updateUser(user)"
-          (delete)="deleteUser(user)"></tr>
+          (delete)="deleteUser(user)"
+        ></tr>
       </tbody>
       <ng-template #noUsers>
         <tr class="empty-row">

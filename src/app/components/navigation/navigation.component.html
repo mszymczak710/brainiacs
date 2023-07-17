@@ -8,7 +8,8 @@
       <div ngbDropdown>
         <button
           class="btn btn-light d-flex justify-content-between align-items-center select-btn btn-sm"
-          ngbDropdownToggle>
+          ngbDropdownToggle
+        >
           {{
             "NAVIGATION.CHOOSE_LANGUAGE." + translate.currentLang.toUpperCase()
               | translate
@@ -19,9 +20,8 @@
           <button
             ngbDropdownItem
             [value]="translate.currentLang === 'en' ? 'pl' : 'en'"
-            (click)="
-              changeLocale(translate.currentLang === 'en' ? 'pl' : 'en')
-            ">
+            (click)="changeLocale(translate.currentLang === 'en' ? 'pl' : 'en')"
+          >
             {{
               "NAVIGATION.CHOOSE_LANGUAGE." +
                 (translate.currentLang === "en" ? "PL" : "EN") | translate
@@ -36,7 +36,8 @@
       data-bs-target="#navbarNav"
       aria-controls="navbarNav"
       aria-expanded="false"
-      aria-label="Toggle navigation">
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">

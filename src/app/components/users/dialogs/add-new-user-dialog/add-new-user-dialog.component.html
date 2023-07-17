@@ -1,5 +1,7 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{ "USERS.CREATE_DIALOG.TITLE" | translate }}</h4>
+  <h4 class="modal-title">
+    {{ "USERS.CREATE_DIALOG.TITLE" | translate }}
+  </h4>
   <button class="btn-close" (click)="activeModal.dismiss()"></button>
 </div>
 <div class="modal-body">
@@ -21,10 +23,12 @@
           [ngClass]="{
             'is-invalid': f['firstName'].touched && f['firstName'].errors,
             'is-valid': f['firstName'].valid
-          }" />
+          }"
+        />
         <div
           *ngIf="f['firstName'].touched && f['firstName'].errors"
-          class="text-danger">
+          class="text-danger"
+        >
           <small *ngIf="f['firstName'].errors?.['required']">{{
             "USERS.VALIDATION.FIELD_REQUIRED" | translate
           }}</small>
@@ -52,10 +56,12 @@
           [ngClass]="{
             'is-invalid': f['lastName'].touched && f['lastName'].errors,
             'is-valid': f['lastName'].valid
-          }" />
+          }"
+        />
         <div
           *ngIf="f['lastName'].touched && f['lastName'].errors"
-          class="text-danger">
+          class="text-danger"
+        >
           <small *ngIf="f['lastName'].errors?.['required']">{{
             "USERS.VALIDATION.FIELD_REQUIRED" | translate
           }}</small>
@@ -82,7 +88,8 @@
         [ngClass]="{
           'is-invalid': f['email'].touched && f['email'].errors,
           'is-valid': f['email'].valid
-        }" />
+        }"
+      />
       <div *ngIf="f['email'].touched && f['email'].errors" class="text-danger">
         <small *ngIf="f['email'].errors?.['required']">{{
           "USERS.VALIDATION.FIELD_REQUIRED" | translate
@@ -105,7 +112,8 @@
     class="btn btn-primary"
     (click)="onSubmit()"
     ngbAutofocus
-    [disabled]="createUserForm.invalid">
+    [disabled]="createUserForm.invalid"
+  >
     {{ "USERS.CREATE_DIALOG.ACTIONS.SAVE" | translate }}
   </button>
 </div>

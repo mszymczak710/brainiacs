@@ -4,17 +4,9 @@
   "semi": false,
   "singleQuote": true,
   "endOfLine": "crlf",
-  "bracketSameLine": true,
+  "bracketSameLine": false,
   "arrowParens": "always",
   "overrides": [
-    {
-      "files": "*.ts",
-      "options": {
-        "semi": true,
-        "printWidth": 80,
-        "useTabs": true
-      }
-    },
     {
       "files": "*.html",
       "options": {
@@ -22,7 +14,16 @@
         "semi": false,
         "singleQuote": false,
         "printWidth": 80,
+        "htmlWhitespaceSensitivity": "css",
         "parser": "angular"
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "semi": true,
+        "printWidth": 80,
+        "useTabs": true
       }
     },
     {
