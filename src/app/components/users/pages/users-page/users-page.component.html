@@ -17,7 +17,6 @@
           <th scope="col">{{ "USERS.TABLE.LAST_NAME" | translate }}</th>
           <th scope="col">{{ "USERS.TABLE.E-MAIL" | translate }}</th>
           <th scope="col"></th>
-          <th scope="col"></th>
         </tr>
       </thead>
       <tbody *ngIf="users$ | async as users; else noUsers">
@@ -30,7 +29,7 @@
       </tbody>
       <ng-template #noUsers>
         <tr class="empty-row">
-          <td colspan="7"></td>
+          <td colspan="6"></td>
         </tr>
       </ng-template>
     </table>

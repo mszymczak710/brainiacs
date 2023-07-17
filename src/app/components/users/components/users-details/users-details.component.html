@@ -11,19 +11,17 @@
 <td class="align-middle">
   <span ngbTooltip="{{ user.email }}"> {{ user.email }} </span>
 </td>
-<td class="align-middle">
+<td class="d-flex justify-content-end align-items-center">
   <span
-    class="btn-sm pt-1"
+    class="btn btn-sm"
     ngbTooltip="{{ 'USERS.TABLE.ACTIONS.UPDATE' | translate }}"
     (click)="update.emit()">
-    <i class="fa fa-edit"></i>
+    <i class="fas fa-edit"></i>
   </span>
-</td>
-<td class="align-middle">
   <span
-    class="btn-sm pt-1"
+    class="btn btn-sm"
     ngbTooltip="{{ 'USERS.TABLE.ACTIONS.DELETE' | translate }}"
     (click)="delete.emit()">
-    <i class="fa fa-trash"></i>
+    <i class="fas fa-trash-alt"></i>
   </span>
 </td>

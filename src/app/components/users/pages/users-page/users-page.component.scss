@@ -1,8 +1,4 @@
-tbody tr,
 .empty-row {
   height: 4.5rem;
-
-  &.empty-row {
-    background-color: rgba(#000000, 0.05) !important;
-  }
+  background-color: rgba(#000000, 0.05) !important;
 }
