@@ -2,7 +2,7 @@
   "USERS": {
     "HEADER": {
       "TITLE": "List of smart guys",
-      "BUTTON": "Add a brainiac"
+      "BUTTON": "Add brainiac"
     },
     "TABLE": {
       "ID": "ID",
@@ -27,7 +27,8 @@
         "CLOSE": "Close"
       },
       "TOAST_MESSAGE": {
-        "SUCCESS": "User added successfully!"
+        "SUCCESS": "User added successfully!",
+        "ERROR": "The user with the specified email address exists in the database!"
       }
     },
     "UPDATE_DIALOG": {
@@ -43,7 +44,8 @@
         "CLOSE": "Close"
       },
       "TOAST_MESSAGE": {
-        "SUCCESS": "User updated successfully!"
+        "SUCCESS": "User updated successfully!",
+        "ERROR": "The user with the specified email address exists in the database!"
       }
     },
     "VALIDATION": {
