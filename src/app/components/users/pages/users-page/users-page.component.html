@@ -33,7 +33,7 @@
       <tbody *ngIf="users$ | async as users">
         <tr
           users-details
-          *ngFor="let user of users$ | async"
+          *ngFor="let user of users"
           [user]="user"
           (update)="updateUser(user)"
           (delete)="deleteUser(user)"></tr>
