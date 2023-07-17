@@ -4,7 +4,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { UsersFacade } from '@users/facades';
 import { User } from '@users/models/users.model';
-import { UsersApiService } from '@users/services/users-api.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -16,11 +15,11 @@ export class UpdateUserDialogComponent implements OnInit {
 	@Input() userId: number;
 	public updateUserForm: FormGroup;
 	private existingEmails: string[] = [];
+	private initialEmail: string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private formBuilder: FormBuilder,
-		private usersApiService: UsersApiService,
 		private usersFacade: UsersFacade,
 		private translate: TranslateService,
 		private toastr: ToastrService
@@ -31,14 +30,18 @@ export class UpdateUserDialogComponent implements OnInit {
 
 		this.usersFacade.all$.subscribe((usersPage) => {
 			this.existingEmails = usersPage.result.map((user) => user.email);
-		});
 
-		this.usersApiService.getUser(this.userId).subscribe((user: User) => {
-			this.updateUserForm.patchValue({
-				firstName: user.firstName,
-				lastName: user.lastName,
-				email: user.email,
-			});
+			const currentUser = usersPage.result.find(
+				(user) => user.id === this.userId
+			);
+			if (currentUser) {
+				this.initialEmail = currentUser.email;
+				this.updateUserForm.patchValue({
+					firstName: currentUser.firstName,
+					lastName: currentUser.lastName,
+					email: currentUser.email,
+				});
+			}
 		});
 	}
 
@@ -53,7 +56,7 @@ export class UpdateUserDialogComponent implements OnInit {
 
 		const email = this.f['email'].value;
 
-		if (this.existingEmails.includes(email)) {
+		if (this.existingEmails.includes(email) && email !== this.initialEmail) {
 			this.translate
 				.get('USERS.UPDATE_DIALOG.TOAST_MESSAGE.ERROR')
 				.subscribe((message: string) => {

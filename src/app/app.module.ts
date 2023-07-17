@@ -10,7 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './components/users/state/reducers/users.reducer';
-import { NgbActiveModal, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
@@ -44,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 			isolate: true,
 		}),
 	],
-	providers: [NgbActiveModal],
+	providers: [],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

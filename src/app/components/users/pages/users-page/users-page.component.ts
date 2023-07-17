@@ -43,7 +43,7 @@ export class UsersPageComponent implements OnInit {
 	}
 
 	addUser(): void {
-		const modalRef = this.modalService.open(AddNewUserDialogComponent, {
+		this.modalService.open(AddNewUserDialogComponent, {
 			size: 'md',
 			backdrop: 'static',
 		});

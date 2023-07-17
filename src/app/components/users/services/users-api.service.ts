@@ -7,7 +7,7 @@ import {
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { User, UsersPage, ApiResponse, UserData } from '@users/models';
-import { environment } from '../../../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Injectable({
 	providedIn: 'root',
@@ -77,26 +77,6 @@ export class UsersApiService {
 		);
 	}
 
-	getUser(userId: number): Observable<User> {
-		const url = `${this.apiUrl}/users/${userId}`;
-		return this.http.get<UserData>(url, this.httpOptions).pipe(
-			map((response: any) => {
-				const userData = response.data;
-				return {
-					id: userData.id,
-					firstName: userData.first_name,
-					lastName: userData.last_name,
-					email: userData.email,
-					avatar: userData.avatar,
-				};
-			}),
-			catchError((error: HttpErrorResponse) => {
-				console.error('Error getting user:', error);
-				return throwError(() => 'Failed to fetch user details.');
-			})
-		);
-	}
-
 	addUser(user: User): Observable<User> {
 		const url = `${this.apiUrl}/users/`;
 		return this.http.post<User>(url, user, this.httpOptions).pipe(
@@ -112,7 +92,7 @@ export class UsersApiService {
 		return this.http.delete<User>(url).pipe(
 			catchError((error: HttpErrorResponse) => {
 				console.error('An error occurred while deleting user:', error);
-				return throwError('Failed to delete user. Please try again later.');
+				return throwError(() => 'Failed to delete user. Please try again later.');
 			})
 		);
 	}
