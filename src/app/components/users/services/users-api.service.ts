@@ -92,7 +92,9 @@ export class UsersApiService {
 		return this.http.delete<User>(url).pipe(
 			catchError((error: HttpErrorResponse) => {
 				console.error('An error occurred while deleting user:', error);
-				return throwError(() => 'Failed to delete user. Please try again later.');
+				return throwError(
+					() => 'Failed to delete user. Please try again later.'
+				);
 			})
 		);
 	}
