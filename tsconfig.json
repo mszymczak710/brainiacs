@@ -23,8 +23,8 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@environments": ["./environments"],
-      "@environments/*": ["./environments/*"],
+      "@environments": ["./src/environments"],
+      "@environments/*": ["./src/environments/*"],
       "@models": ["./src/app/models"],
       "@models/*": ["./src/app/models/*"],
       "@users": ["./src/app/components/users"],
