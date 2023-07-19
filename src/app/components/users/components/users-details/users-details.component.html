@@ -1,23 +1,15 @@
-<td class="align-middle">
-  {{ user.id }}
-</td>
+<td class="align-middle">{{ user.id }}</td>
 <td class="align-middle">
   <img [src]="user.avatar" alt="{{ user.firstName }} {{ user.lastName }}" />
 </td>
 <td class="align-middle">
-  <span ngbTooltip="{{ user.firstName }}">
-    {{ user.firstName }}
-  </span>
+  <span ngbTooltip="{{ user.firstName }}"> {{ user.firstName }} </span>
 </td>
 <td class="align-middle">
-  <span ngbTooltip="{{ user.lastName }}">
-    {{ user.lastName }}
-  </span>
+  <span ngbTooltip="{{ user.lastName }}"> {{ user.lastName }} </span>
 </td>
 <td class="align-middle">
-  <span ngbTooltip="{{ user.email }}">
-    {{ user.email }}
-  </span>
+  <span ngbTooltip="{{ user.email }}"> {{ user.email }} </span>
 </td>
 <td class="d-flex justify-content-end align-items-center">
   <span
