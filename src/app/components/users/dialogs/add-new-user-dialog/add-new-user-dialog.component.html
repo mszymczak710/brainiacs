@@ -1,7 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">
-    {{ "USERS.CREATE_DIALOG.TITLE" | translate }}
-  </h4>
+  <h4 class="modal-title">{{ "USERS.CREATE_DIALOG.TITLE" | translate }}</h4>
   <button class="btn-close" (click)="activeModal.dismiss()"></button>
 </div>
 <div class="modal-body">
@@ -13,7 +11,7 @@
           <span class="required">*</span></label
         >
         <input
-          type="search"
+          type="text"
           class="form-control mt-1"
           id="firstName"
           placeholder="{{
@@ -46,7 +44,7 @@
           <span class="required">*</span></label
         >
         <input
-          type="search"
+          type="text"
           class="form-control mt-1"
           id="lastName"
           placeholder="{{
@@ -80,7 +78,7 @@
         <span class="required">*</span></label
       >
       <input
-        type="search"
+        type="text"
         class="form-control mt-1"
         id="email"
         placeholder="{{ 'USERS.CREATE_DIALOG.E-MAIL_PLACEHOLDER' | translate }}"
