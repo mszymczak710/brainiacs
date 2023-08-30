@@ -1,7 +1,5 @@
 # Brainiacs
-Aplikacja webowa do zarządzania użytkownikami (wyświetlanie, dodawanie, edycja, usuwanie)
-
-korzystająca z API (https://reqres.in/)
+Aplikacja webowa do zarządzania użytkownikami (wyświetlanie, dodawanie, edycja, usuwanie) korzystająca z API (https://reqres.in/)
 
 Operacje POST, PUT oraz DELETE odpowiadające za dodawanie, edycję i usuwanie userów w podanym API nie modyfikują bazy danych, jednak jest wysyłany odpowiedni request. Powyższe operacje zostały zasymulowane.
 
