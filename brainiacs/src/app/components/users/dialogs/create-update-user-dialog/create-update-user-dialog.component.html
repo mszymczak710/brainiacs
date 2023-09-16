@@ -1,0 +1,112 @@
+<div class="modal-header">
+  <h4 class="modal-title" *ngIf="dialogType === 'CREATE'">
+    {{ "USERS.DIALOG.CREATE.TITLE" | translate }}
+  </h4>
+  <h4 class="modal-title" *ngIf="dialogType === 'UPDATE'">
+    {{ "USERS.DIALOG.UPDATE.TITLE" | translate }}
+  </h4>
+  <button class="btn-close" (click)="cancel()"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="userForm">
+    <div class="row">
+      <!-- First Name -->
+      <div class="form-group col-sm-6 mb-3">
+        <label class="ms-1" for="firstName">
+          {{ "USERS.DIALOG.FIRST_NAME" | translate }}
+          <span class="required">*</span>
+        </label>
+        <input
+          type="text"
+          class="form-control mt-1"
+          id="firstName"
+          formControlName="firstName"
+          placeholder="{{ 'USERS.DIALOG.FIRST_NAME_PLACEHOLDER' | translate }}"
+          [ngClass]="{
+            'is-invalid': f['firstName'].touched && f['firstName'].errors,
+            'is-valid': f['firstName'].touched && !f['firstName'].errors
+          }"
+        />
+        <div
+          class="text-danger"
+          *ngIf="f['firstName'].touched && f['firstName'].errors"
+        >
+          <ng-container *ngFor="let error of getError(f['firstName'].errors)">
+            <small>{{
+              "USERS.DIALOG.VALIDATION.FIRST_NAME." + error
+                | uppercase
+                | translate
+            }}</small>
+          </ng-container>
+        </div>
+      </div>
+      <!-- Last Name -->
+      <div class="form-group col-sm-6 mb-3">
+        <label class="ms-1" for="lastName">
+          {{ "USERS.DIALOG.LAST_NAME" | translate }}
+          <span class="required">*</span>
+        </label>
+        <input
+          type="text"
+          class="form-control mt-1"
+          id="lastName"
+          formControlName="lastName"
+          placeholder="{{ 'USERS.DIALOG.LAST_NAME_PLACEHOLDER' | translate }}"
+          [ngClass]="{
+            'is-invalid': f['lastName'].touched && f['lastName'].errors,
+            'is-valid': f['lastName'].touched && !f['lastName'].errors
+          }"
+        />
+        <div
+          class="text-danger"
+          *ngIf="f['lastName'].touched && f['lastName'].errors"
+        >
+          <ng-container *ngFor="let error of getError(f['lastName'].errors)">
+            <small>{{
+              "USERS.DIALOG.VALIDATION.LAST_NAME." + error
+                | uppercase
+                | translate
+            }}</small>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group col-sm-12">
+      <label class="ms-1" for="email">
+        {{ "USERS.DIALOG.E-MAIL" | translate }} <span class="required">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control mt-1"
+        id="email"
+        formControlName="email"
+        placeholder="{{ 'USERS.DIALOG.E-MAIL_PLACEHOLDER' | translate }}"
+        [ngClass]="{
+          'is-invalid': f['email'].touched && f['email'].errors,
+          'is-valid': f['email'].touched && !f['email'].errors
+        }"
+      />
+      <div class="text-danger" *ngIf="f['email'].touched && f['email'].errors">
+        <ng-container *ngFor="let error of getError(f['email'].errors)">
+          <small>{{
+            "USERS.DIALOG.VALIDATION.EMAIL." + error | uppercase | translate
+          }}</small>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">
+    {{ "USERS.DIALOG.ACTIONS.CANCEL" | translate }}
+  </button>
+  <button
+    class="btn btn-primary"
+    ngbAutofocus
+    [disabled]="userForm.invalid"
+    (click)="onSubmit()"
+  >
+    {{ "USERS.DIALOG.ACTIONS.SAVE" | translate }}
+  </button>
+</div>

@@ -1,5 +1,6 @@
-import { createSelector } from '@ngrx/store';
 import * as fromFeature from '@users/state/reducers/users.reducer';
+
+import { createSelector } from '@ngrx/store';
 
 export const getUsersPage = createSelector(
 	fromFeature.getUsersFeatureState,

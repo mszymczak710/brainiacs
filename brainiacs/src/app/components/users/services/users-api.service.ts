@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { ApiResponse, User, UserData, UsersPage } from '@users/models';
 import {
 	HttpClient,
 	HttpErrorResponse,
 	HttpHeaders,
 } from '@angular/common/http';
-import { Observable, throwError, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { User, UsersPage, ApiResponse, UserData } from '@users/models';
+
+import { Injectable } from '@angular/core';
 import { environment } from '@environments/environment';
 
 @Injectable({

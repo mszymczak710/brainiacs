@@ -1,6 +1,8 @@
-import { createFeatureSelector, createReducer, on } from '@ngrx/store';
-import { UsersPage } from '@users/models';
 import * as UsersActions from '@users/state/actions/users.actions';
+
+import { createFeatureSelector, createReducer, on } from '@ngrx/store';
+
+import { UsersPage } from '@users/models';
 
 export const STATE_KEY = 'users';
 

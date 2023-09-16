@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { UsersPage } from '@users/models';
-import { UsersActions } from '@users/state';
-import { UsersState } from '@users/state/reducers/users.reducer';
 import {
 	getLoadingState,
 	getUsersPage,
 } from '@users/state/selectors/users.selector';
+
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { User } from '@users/models/users.model';
+import { UsersActions } from '@users/state';
+import { UsersPage } from '@users/models';
+import { UsersState } from '@users/state/reducers/users.reducer';
 
 @Injectable({
 	providedIn: 'root',

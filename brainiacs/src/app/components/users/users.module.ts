@@ -1,23 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UsersPageComponent } from './pages/users-page/users-page.component';
 import {
-	AddNewUserDialogComponent,
-	UpdateUserDialogComponent,
+	CreateUpdateUserDialogComponent,
 	DeleteConfirmationDialogComponent,
 } from './dialogs/';
-import { UsersApiService } from './services';
-import { HttpClient } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { reducers, STATE_KEY } from './state/reducers/users.reducer';
-import { effects } from './state/effects';
 import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { STATE_KEY, reducers } from './state/reducers/users.reducer';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+import { CommonModule } from '@angular/common';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClient } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UsersRoutingModule } from './users-routing.module';
+import { StoreModule } from '@ngrx/store';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { UsersApiService } from './services';
 import { UsersDetailsComponent } from './components/users-details/users-details.component';
+import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { UsersRoutingModule } from './users-routing.module';
+import { effects } from './state/effects';
 
 export function homeHttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http, './assets/i18n/users/', '.json');
@@ -25,20 +25,18 @@ export function homeHttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
 	declarations: [
-		UsersPageComponent,
-		AddNewUserDialogComponent,
-		UpdateUserDialogComponent,
+		CreateUpdateUserDialogComponent,
 		DeleteConfirmationDialogComponent,
 		UsersDetailsComponent,
+		UsersPageComponent,
 	],
 	imports: [
 		CommonModule,
+		EffectsModule.forFeature(effects),
 		NgbTooltipModule,
 		NgbModalModule,
 		ReactiveFormsModule,
 		StoreModule.forFeature(STATE_KEY, reducers),
-		EffectsModule.forFeature(effects),
-		UsersRoutingModule,
 		TranslateModule.forChild({
 			defaultLanguage: 'en',
 			loader: {
@@ -47,6 +45,7 @@ export function homeHttpLoaderFactory(http: HttpClient) {
 				deps: [HttpClient],
 			},
 		}),
+		UsersRoutingModule,
 	],
 	providers: [UsersApiService],
 })

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersFacade } from '@users/facades';
-import { User, UsersPage } from '@users/models';
-import { Observable, map } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
-	AddNewUserDialogComponent,
+	CreateUpdateUserDialogComponent,
 	DeleteConfirmationDialogComponent,
-	UpdateUserDialogComponent,
 } from '@users/dialogs/';
-import { TranslateService } from '@ngx-translate/core';
+import { Observable, map } from 'rxjs';
+import { User, UsersPage } from '@users/models';
+
 import { I18nService } from '@services';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import { UsersFacade } from '@users/facades';
 
 @Component({
 	selector: 'app-users',
@@ -25,10 +25,10 @@ export class UsersPageComponent implements OnInit {
 	private user: User;
 
 	constructor(
-		private usersFacade: UsersFacade,
+		private i18nService: I18nService,
 		private modalService: NgbModal,
 		private translate: TranslateService,
-		private i18nService: I18nService
+		private usersFacade: UsersFacade
 	) {}
 
 	ngOnInit(): void {
@@ -43,18 +43,20 @@ export class UsersPageComponent implements OnInit {
 	}
 
 	addUser(): void {
-		this.modalService.open(AddNewUserDialogComponent, {
+		const modalRef = this.modalService.open(CreateUpdateUserDialogComponent, {
 			size: 'md',
 			backdrop: 'static',
 		});
+		modalRef.componentInstance.dialogType = 'CREATE';
 	}
 
 	updateUser(user: User): void {
 		this.user = user;
-		const modalRef = this.modalService.open(UpdateUserDialogComponent, {
+		const modalRef = this.modalService.open(CreateUpdateUserDialogComponent, {
 			size: 'md',
 			backdrop: 'static',
 		});
+		modalRef.componentInstance.dialogType = 'UPDATE';
 		modalRef.componentInstance.userId = this.user.id;
 	}
 

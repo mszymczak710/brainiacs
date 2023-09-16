@@ -1,5 +1,5 @@
-import { createAction, props } from '@ngrx/store';
 import { User, UsersPage } from '@users/models';
+import { createAction, props } from '@ngrx/store';
 
 const LOAD_USERS = '[Users API] Load Users...';
 const LOAD_USERS_SUCCESS = '[Users API] Load Users Successfully';

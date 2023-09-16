@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
+
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 import { UsersFacade } from '@users/facades';
 
 @Component({
@@ -14,15 +15,19 @@ export class DeleteConfirmationDialogComponent {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private usersFacade: UsersFacade,
 		private toastr: ToastrService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private usersFacade: UsersFacade
 	) {}
+
+	cancel(): void {
+		this.activeModal.dismiss();
+	}
 
 	deleteUser(): void {
 		this.usersFacade.deleteUser(this.userId);
 		this.translate
-			.get('USERS.DELETE_DIALOG.TOAST_MESSAGE.SUCCESS')
+			.get('USERS.DIALOG.TOAST_MESSAGE.DELETE.SUCCESS')
 			.subscribe((message: string) => {
 				this.toastr.error(message);
 			});

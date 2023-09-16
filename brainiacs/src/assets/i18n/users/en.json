@@ -14,8 +14,17 @@
         "DELETE": "Delete the user"
       }
     },
-    "CREATE_DIALOG": {
-      "TITLE": "Add a new brainiac",
+    "DIALOG": {
+      "DELETE": {
+        "TITLE": "Delete a brainiac",
+        "CONFIRMATION_MESSAGE": "Are you sure you want to delete this user?"
+      },
+      "CREATE": {
+        "TITLE": "Add a new brainiac"
+      },
+      "UPDATE": {
+        "TITLE": "Edit a brainiac"
+      },
       "FIRST_NAME": "First name",
       "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
       "LAST_NAME": "Last name",
@@ -23,49 +32,39 @@
       "E-MAIL": "E-mail",
       "E-MAIL_PLACEHOLDER": "Type in the e-mail...",
       "ACTIONS": {
-        "SAVE": "Save",
-        "CLOSE": "Close"
-      },
-      "TOAST_MESSAGE": {
-        "SUCCESS": "User added successfully!",
-        "ERROR": "The user with the specified email address exists in the database!"
-      }
-    },
-    "UPDATE_DIALOG": {
-      "TITLE": "Edit a brainiac",
-      "FIRST_NAME": "First name",
-      "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
-      "LAST_NAME": "Last name",
-      "LAST_NAME_PLACEHOLDER": "Type in the last name...",
-      "E-MAIL": "E-mail",
-      "E-MAIL_PLACEHOLDER": "Type in the e-mail...",
-      "ACTIONS": {
-        "SAVE": "Save",
-        "CLOSE": "Close"
-      },
-      "TOAST_MESSAGE": {
-        "SUCCESS": "User updated successfully!",
-        "ERROR": "The user with the specified email address exists in the database!"
-      }
-    },
-    "VALIDATION": {
-      "FIELD_REQUIRED": "Field is required",
-      "FIELD_MAX_LENGTH": "Field contains too many characters",
-      "INVALID": {
-        "FIRST_NAME": "Invalid first name",
-        "LAST_NAME": "Invalid last name",
-        "E-MAIL": "Invalid email address"
-      }
-    },
-    "DELETE_DIALOG": {
-      "TITLE": "Delete a brainiac",
-      "CONFIRMATION_MESSAGE": "Are you sure you want to delete this user?",
-      "ACTIONS": {
+        "CANCEL": "Cancel",
         "DELETE": "Delete",
-        "CLOSE": "Close"
+        "SAVE": "Save"
       },
       "TOAST_MESSAGE": {
-        "SUCCESS": "User deleted successfully!"
+        "CREATE": {
+          "SUCCESS": "User added successfully!",
+          "ERROR": "The user with the specified email address exists in the database!"
+        },
+        "UPDATE": {
+          "SUCCESS": "User updated successfully!",
+          "ERROR": "The user with the specified email address exists in the database!"
+        },
+        "DELETE": {
+          "SUCCESS": "User deleted successfully!"
+        }
+      },
+      "VALIDATION": {
+        "FIRST_NAME": {
+          "REQUIRED": "Field is required",
+          "MAXLENGTH": "Field contains too many characters",
+          "PATTERN": "Invalid first name"
+        },
+        "LAST_NAME": {
+          "REQUIRED": "Field is required",
+          "MAXLENGTH": "Field contains too many characters",
+          "PATTERN": "Invalid last name"
+        },
+        "EMAIL": {
+          "REQUIRED": "Field is required",
+          "MAXLENGTH": "Field contains too many characters",
+          "EMAIL": "Invalid email address"
+        }
       }
     }
   }

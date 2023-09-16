@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { I18nService } from '@services';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-navigation',
@@ -9,8 +9,8 @@ import { I18nService } from '@services';
 })
 export class NavigationComponent {
 	constructor(
-		public translate: TranslateService,
-		private i18nService: I18nService
+		private i18nService: I18nService,
+		public translate: TranslateService
 	) {
 		translate.use(translate.defaultLang);
 	}
