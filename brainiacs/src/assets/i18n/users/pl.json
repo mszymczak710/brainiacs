@@ -1,71 +1,79 @@
 {
-  "USERS": {
-    "HEADER": {
-      "TITLE": "Lista mądrych ludzi",
-      "BUTTON": "Dodaj mózgowca"
-    },
-    "TABLE": {
-      "ID": "ID",
-      "FIRST_NAME": "Imię",
-      "LAST_NAME": "Nazwisko",
-      "E-MAIL": "E-mail",
-      "ACTIONS": {
-        "UPDATE": "Edytuj użytkownika",
-        "DELETE": "Usuń użytkownika"
-      }
-    },
-    "DIALOG": {
-      "DELETE": {
-        "TITLE": "Usuwanie mózgowca",
-        "CONFIRMATION_MESSAGE": "Czy na pewno chcesz usunąć tego użytkownika?"
+  "users": {
+    "dialog": {
+      "actions": {
+        "cancel": "Anuluj",
+        "delete": "Usuń",
+        "save": "Zapisz"
       },
-      "CREATE": {
-        "TITLE": "Dodawanie nowego mózgowca"
+      "create": {
+        "title": "Dodawanie nowego mózgowca"
       },
-      "UPDATE": {
-        "TITLE": "Edycja mózgowca"
+      "delete": {
+        "confirmation_message": "Czy na pewno chcesz usunąć tego użytkownika?",
+        "title": "Usuwanie mózgowca"
       },
-      "FIRST_NAME": "Imię",
-      "FIRST_NAME_PLACEHOLDER": "Wpisz imię...",
-      "LAST_NAME": "Nazwisko",
-      "LAST_NAME_PLACEHOLDER": "Wpisz nazwisko...",
-      "E-MAIL": "E-mail",
-      "E-MAIL_PLACEHOLDER": "Wpisz adres e-mail...",
-      "ACTIONS": {
-        "CANCEL": "Anuluj",
-        "DELETE": "Usuń",
-        "SAVE": "Zapisz"
-      },
-      "TOAST_MESSAGE": {
-        "CREATE": {
-          "SUCCESS": "Użytkownik dodany pomyślnie!",
-          "ERROR": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!"
+      "fields": {
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Wpisz adres e-mail..."
         },
-        "UPDATE": {
-          "SUCCESS": "Użytkownik został zaktualizowany pomyślnie!",
-          "ERROR": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!"
+        "first_name": {
+          "label": "Imię",
+          "placeholder": "Wpisz imię..."
         },
-        "DELETE": {
-          "SUCCESS": "Użytkownik został usunięty pomyślnie!"
+        "last_name": {
+          "label": "Nazwisko",
+          "placeholder": "Wpisz nazwisko..."
         }
       },
-      "VALIDATION": {
-        "FIRST_NAME": {
-          "REQUIRED": "Pole jest wymagane",
-          "MAXLENGTH": "Pole zawiera za dużo znaków",
-          "PATTERN": "Niepoprawne imię"
+      "toast_message": {
+        "create": {
+          "error": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!",
+          "success": "Użytkownik dodany pomyślnie!"
         },
-        "LAST_NAME": {
-          "REQUIRED": "Pole jest wymagane",
-          "MAXLENGTH": "Pole zawiera za dużo znaków",
-          "PATTERN": "Niepoprawne nazwisko"
+        "delete": {
+          "success": "Użytkownik został usunięty pomyślnie!"
         },
-        "EMAIL": {
-          "REQUIRED": "Pole jest wymagane",
-          "MAXLENGTH": "Pole zawiera za dużo znaków",
-          "EMAIL": "Niepoprawny adres e-mail"
+        "update": {
+          "error": "Użytkownik o podanym adresie e-mail istnieje w bazie danych!",
+          "success": "Użytkownik został zaktualizowany pomyślnie!"
+        }
+      },
+      "update": {
+        "title": "Edycja mózgowca"
+      },
+      "validation": {
+        "email": {
+          "email": "Niepoprawny adres e-mail",
+          "maxlength": "Pole zawiera za dużo znaków",
+          "required": "Pole jest wymagane"
+        },
+        "first_name": {
+          "maxlength": "Pole zawiera za dużo znaków",
+          "pattern": "Niepoprawne imię",
+          "required": "Pole jest wymagane"
+        },
+        "last_name": {
+          "maxlength": "Pole zawiera za dużo znaków",
+          "pattern": "Niepoprawne nazwisko",
+          "required": "Pole jest wymagane"
         }
       }
+    },
+    "header": {
+      "button": "Dodaj mózgowca",
+      "title": "Lista mądrych ludzi"
+    },
+    "table": {
+      "actions": {
+        "delete": "Usuń użytkownika",
+        "update": "Edytuj użytkownika"
+      },
+      "email": "E-mail",
+      "first_name": "Imię",
+      "id": "ID",
+      "last_name": "Nazwisko"
     }
   }
 }

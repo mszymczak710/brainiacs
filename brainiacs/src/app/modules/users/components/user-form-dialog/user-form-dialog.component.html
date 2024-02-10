@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h3 class="modal-title">
+    {{ title }}
+  </h3>
+  <button class="btn-close" (click)="cancel()"></button>
+</div>
+<div *ngIf="form" class="modal-body">
+  <form>
+    <div class="row">
+      <ng-container
+          *ngTemplateOutlet="formFieldTpl; context: { fields: formFields, form: form }"
+      ></ng-container>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">
+    {{ "users.dialog.actions.cancel" | translate }}
+  </button>
+  <button
+      class="btn btn-primary"
+      ngbAutofocus
+      [disabled]="form.invalid"
+      (click)="onSubmit()"
+  >
+    {{ "users.dialog.actions.save" | translate }}
+  </button>
+</div>
+
+<ng-template #formFieldTpl let-fields="fields" let-form="form">
+  <ng-container *ngIf="form">
+  <ng-container *ngFor="let field of fields">
+    <div [class]="field.class" [formGroup]="form">
+      <label class="ms-1" [for]="field.fieldName">
+        {{ field.label | translate }}
+        <span class="required" *ngIf="field.required">*</span>
+      </label>
+      <input
+          class="form-control mt-1"
+          placeholder="{{ field.placeholder | translate }}"
+          [formControlName]="field.fieldName"
+          [ngClass]="{
+            'is-invalid': f[field.fieldName].touched && f[field.fieldName].errors,
+            'is-valid': f[field.fieldName].touched && !f[field.fieldName].errors
+          }"
+          [type]="field.type"
+
+      />
+      <div
+          *ngIf="f[field.fieldName].touched && f[field.fieldName].errors"
+          class="text-danger"
+      >
+        <ng-container *ngFor="let error of getError(field.fieldName)">
+          <small>{{
+            "users.dialog.validation." + field.fieldName + "." + error | translate
+          }}</small>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+  </ng-container>
+</ng-template>

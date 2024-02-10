@@ -25,12 +25,12 @@
     "paths": {
       "@environments": ["./src/environments"],
       "@environments/*": ["./src/environments/*"],
-      "@models": ["./src/app/models"],
-      "@models/*": ["./src/app/models/*"],
-      "@users": ["./src/app/components/users"],
-      "@users/*": ["./src/app/components/users/*"],
-      "@services": ["./src/app/services"],
-      "@services/*": ["./src/app/services/*"],
+      "@types": ["src/app/core/types"],
+      "@types/*": ["src/app/core/types/*"],
+      "@users": ["src/app/modules/users"],
+      "@users/*": ["src/app/modules/users/*"],
+      "@services": ["src/app/core/services"],
+      "@services/*": ["src/app/core/services/*"],
       "@state/*": ["./src/app/state/*"]
     }
   },

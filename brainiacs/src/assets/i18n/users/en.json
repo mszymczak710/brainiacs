@@ -1,71 +1,79 @@
 {
-  "USERS": {
-    "HEADER": {
-      "TITLE": "List of smart guys",
-      "BUTTON": "Add brainiac"
-    },
-    "TABLE": {
-      "ID": "ID",
-      "FIRST_NAME": "First name",
-      "LAST_NAME": "Last name",
-      "E-MAIL": "E-mail",
-      "ACTIONS": {
-        "UPDATE": "Edit the user",
-        "DELETE": "Delete the user"
-      }
-    },
-    "DIALOG": {
-      "DELETE": {
-        "TITLE": "Delete a brainiac",
-        "CONFIRMATION_MESSAGE": "Are you sure you want to delete this user?"
+  "users": {
+    "dialog": {
+      "actions": {
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "save": "Save"
       },
-      "CREATE": {
-        "TITLE": "Add a new brainiac"
+      "create": {
+        "title": "Add a new brainiac"
       },
-      "UPDATE": {
-        "TITLE": "Edit a brainiac"
+      "delete": {
+        "confirmation_message": "Are you sure you want to delete this user?",
+        "title": "Delete a brainiac"
       },
-      "FIRST_NAME": "First name",
-      "FIRST_NAME_PLACEHOLDER": "Type in the first name...",
-      "LAST_NAME": "Last name",
-      "LAST_NAME_PLACEHOLDER": "Type in the last name...",
-      "E-MAIL": "E-mail",
-      "E-MAIL_PLACEHOLDER": "Type in the e-mail...",
-      "ACTIONS": {
-        "CANCEL": "Cancel",
-        "DELETE": "Delete",
-        "SAVE": "Save"
-      },
-      "TOAST_MESSAGE": {
-        "CREATE": {
-          "SUCCESS": "User added successfully!",
-          "ERROR": "The user with the specified email address exists in the database!"
+      "fields": {
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Type in the e-mail..."
         },
-        "UPDATE": {
-          "SUCCESS": "User updated successfully!",
-          "ERROR": "The user with the specified email address exists in the database!"
+        "first_name": {
+          "label": "First name",
+          "placeholder": "Type in the first name..."
         },
-        "DELETE": {
-          "SUCCESS": "User deleted successfully!"
+        "last_name": {
+          "label": "Last name",
+          "placeholder": "Type in the last name..."
         }
       },
-      "VALIDATION": {
-        "FIRST_NAME": {
-          "REQUIRED": "Field is required",
-          "MAXLENGTH": "Field contains too many characters",
-          "PATTERN": "Invalid first name"
+      "toast_message": {
+        "create": {
+          "error": "The user with the specified email address exists in the database!",
+          "success": "User added successfully!"
         },
-        "LAST_NAME": {
-          "REQUIRED": "Field is required",
-          "MAXLENGTH": "Field contains too many characters",
-          "PATTERN": "Invalid last name"
+        "delete": {
+          "success": "User deleted successfully!"
         },
-        "EMAIL": {
-          "REQUIRED": "Field is required",
-          "MAXLENGTH": "Field contains too many characters",
-          "EMAIL": "Invalid email address"
+        "update": {
+          "error": "The user with the specified email address exists in the database!",
+          "success": "User updated successfully!"
+        }
+      },
+      "update": {
+        "title": "Edit a brainiac"
+      },
+      "validation": {
+        "email": {
+          "email": "Invalid email address",
+          "maxlength": "Field contains too many characters",
+          "required": "Field is required"
+        },
+        "first_name": {
+          "maxlength": "Field contains too many characters",
+          "pattern": "Invalid first name",
+          "required": "Field is required"
+        },
+        "last_name": {
+          "maxlength": "Field contains too many characters",
+          "pattern": "Invalid last name",
+          "required": "Field is required"
         }
       }
+    },
+    "header": {
+      "button": "Add brainiac",
+      "title": "List of smart guys"
+    },
+    "table": {
+      "actions": {
+        "delete": "Delete the user",
+        "update": "Edit the user"
+      },
+      "email": "E-mail",
+      "first_name": "First name",
+      "id": "ID",
+      "last_name": "Last name"
     }
   }
 }

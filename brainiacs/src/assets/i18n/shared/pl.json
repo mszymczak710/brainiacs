@@ -1,15 +1,15 @@
 {
-  "NAVIGATION": {
-    "HOME": "Strona główna",
-    "USERS": "Lista mądrych ludzi",
-    "HELP": "Pomoc",
-    "CHOOSE_LANGUAGE": {
-      "PL": "Polski",
-      "EN": "Angielski"
-    }
+  "home": {
+    "button": "Przejdź do listy użytkowników",
+    "title": "Witaj w aplikacji mądrych ludzi!"
   },
-  "HOME": {
-    "TITLE": "Witaj w aplikacji mądrych ludzi!",
-    "BUTTON": "Przejdź do listy użytkowników"
+  "navigation": {
+    "choose_language": {
+      "EN": "Angielski",
+      "PL": "Polski"
+    },
+    "help": "Pomoc",
+    "home": "Strona główna",
+    "users": "Lista mądrych ludzi"
   }
 }

@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ "users.dialog.delete.title" | translate }}</h4>
+  <button class="btn-close" (click)="cancel()"></button>
+</div>
+<div class="modal-body">
+  <p>{{ "users.dialog.delete.confirmation_message" | translate }}</p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">
+    {{ "users.dialog.actions.cancel" | translate }}
+  </button>
+  <button class="btn btn-danger" ngbAutofocus (click)="deleteUser()">
+    {{ "users.dialog.actions.delete" | translate }}
+  </button>
+</div>

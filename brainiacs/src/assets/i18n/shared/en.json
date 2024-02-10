@@ -1,15 +1,15 @@
 {
-  "NAVIGATION": {
-    "HOME": "Home",
-    "USERS": "List of smart guys",
-    "HELP": "Help",
-    "CHOOSE_LANGUAGE": {
-      "PL": "Polish",
-      "EN": "English"
-    }
+  "home": {
+    "button": "Go to list of users",
+    "title": "Welcome to the application of smart people!"
   },
-  "HOME": {
-    "TITLE": "Welcome to the application of smart people!",
-    "BUTTON": "Go to list of users"
+  "navigation": {
+    "choose_language": {
+      "EN": "English",
+      "PL": "Polish"
+    },
+    "help": "Help",
+    "home": "Home",
+    "users": "List of smart guys"
   }
 }

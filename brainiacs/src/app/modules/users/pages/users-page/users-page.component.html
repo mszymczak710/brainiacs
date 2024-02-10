@@ -1,0 +1,38 @@
+<div class="container-md mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>
+      <i class="fas fa-user-friends"></i> {{ "users.header.title" | translate }}
+    </h1>
+    <button class="btn btn-primary" (click)="addUser()">
+      <i class="fa fa-plus"></i> {{ "users.header.button" | translate }}
+    </button>
+  </div>
+  <div class="table-responsive-sm">
+    <table class="table table-striped">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">{{ "users.table.id" | translate }}</th>
+          <th scope="col"></th>
+          <th scope="col">{{ "users.table.first_name" | translate }}</th>
+          <th scope="col">{{ "users.table.last_name" | translate }}</th>
+          <th scope="col">{{ "users.table.email" | translate }}</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users$ | async as users; else noUsers">
+        <tr
+          user-details
+          *ngFor="let user of users"
+          [user]="user"
+          (update)="updateUser(user)"
+          (delete)="deleteUser(user)"
+        ></tr>
+      </tbody>
+      <ng-template #noUsers>
+        <tr class="empty-row">
+          <td colspan="6"></td>
+        </tr>
+      </ng-template>
+    </table>
+  </div>
+</div>
